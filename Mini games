@@ -1,0 +1,79 @@
+# ROCK PAPER SCISSORS GAME #
+import random,sys
+print ('rock,paper scissors')
+wins = 0
+losses = 0
+ties = 0
+while True:
+    print('%s wins,%s losses,%s ties' %(wins,losses ,ties))
+    while True:
+        print('Enter your move: (r)ock ,(p)aper,(s)cissors or (q)uit')
+        playermove = input ()
+        if playermove == 'q':
+            sys.exit()
+        if playermove == 'r' or playermove == 'p' or playermove == 's':
+            break
+        print('type one of r,p,s or q')
+
+    if playermove == 'r':
+        print('rock vs...')
+    elif playermove == 'p':
+        print('paper vs...')
+    elif playermove == 's':
+        print ('scissors vs ...')
+    randomnumber = random.randint(1,3)
+    if randomnumber == 1:
+        computermove = 'r'
+        print('rock')
+    elif randomnumber == 2:
+        computermove = 'p'
+        print('paper')
+    elif randomnumber == 3:
+        computermove = 's'
+        print('scissor')
+
+    if playermove == computermove:
+        print('its a tie')
+        ties = ties + 1
+    elif playermove == 'r' and computermove == 's':
+        print ('you win')
+        wins = wins +1
+    elif playermove == 'p' and computermove == 'r':
+        print('you win')
+        wins = wins +1
+
+    elif playermove == 'r' and computermove == 'p':
+        print('you lose')
+        losses =losses + 1
+    elif  playermove == 'p' and computermove == 's':
+        print('you lose')
+        losses =losses + 1
+
+    elif  playermove == 's' and computermove == 'r':
+        print('you lose')
+        losses =losses + 1
+# CODE ENDS HERE #
+
+
+# GUESS THE NUMBER GAME #
+import random
+secretnumber = random.randint(1,20)
+print ('I am thinking of a number from 1 to 20')
+for guessesTaken in range (1,7):
+    print('take a guess')
+    guess = int(input())
+
+    if guess < secretnumber:
+        print('your guess is too low')
+
+    elif guess > secretnumber:
+        print ('your guess is too high')
+    else:
+        break
+if guess == secretnumber:
+    print ('GG you guessed my number in ' +str(guessesTaken) +'guesses')
+
+else:
+    print('nah, the number i was thinking was ' +str(secretnumber))
+# CODE ENDS HERE #
+
